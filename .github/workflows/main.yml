@@ -1,0 +1,40 @@
+name: python CI 
+
+on: 
+  push: 
+    branches: [ "main" ]
+
+jobs: 
+
+    build: 
+      runs-on: ubuntu-latest 
+
+      steps: 
+      - uses: actions/checkout@v3
+      - name: Setup python 3.10 
+        uses: actions/setup-python@v3
+      - run: pip install -r requirements.txt
+      - run: python test_hola_mundo.py
+    deploy: 
+        name: deploy 
+        needs: [build] 
+        runs-on: ubuntu-latest 
+        steps: 
+          - name: Deploy to production
+            uses: johnbeynon/render-deploy-action@v0.0.8
+            with: 
+              service-id: ${{ secrets.SECRET_ID }}
+              api-key: ${{ secrets.SECRET_KEY }}
+    message: 
+        needs: [build]
+        if: failure()
+        runs-on: ubuntu-latest
+        steps: 
+          - name: Discord actions 
+            uses: tsickert/discord-webhook@v5.3.0
+            with: 
+              webhook-url: ${{ secrets.SECFRETS_WEBHOOK }}
+              username: Bob
+              avatar-url: https://octodex.github.com/images/Sentrytocat_octodex.jpg
+              content: "El Test fallo"
+              color-failure: '#eb4034'
