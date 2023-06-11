@@ -1,5 +1,5 @@
 def hola_mundo():
-    return "la Mundo!"
+    return "Hola Mundo!"
 
 print(hola_mundo())
 
