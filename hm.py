@@ -1,7 +1,7 @@
 def hola_mundo():
     return "Hola Mundo!"
 
-hola_mundo()
+print(hola_mundo())
 
 """ from flask import Flask
 
