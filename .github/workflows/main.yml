@@ -35,7 +35,7 @@ jobs:
             env:
               SLACK_CHANNEL: general
               SLACK_COLOR: '#fc1500'
-              SLACK_ICON: https://github.com/rtCamp.png?size=48
+              SLACK_ICON: https://octodex.github.com/images/Sentrytocat_octodex.jpg
               SLACK_MESSAGE: 'Fallo al hacer el build'
               SLACK_TITLE: Build Status
               SLACK_USERNAME: Slack Bot
@@ -50,7 +50,7 @@ jobs:
             env:
               SLACK_CHANNEL: general
               SLACK_COLOR: '#00fc4c'
-              SLACK_ICON: https://github.com/rtCamp.png?size=48
+              SLACK_ICON: https://octodex.github.com/images/Sentrytocat_octodex.jpg
               SLACK_MESSAGE: 'Build exitoso'
               SLACK_TITLE: Build Status
               SLACK_USERNAME: Slack Bot
