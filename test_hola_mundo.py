@@ -6,4 +6,5 @@ def test_hm():
 
 test_hm()
 
+y = 3
 y = y
