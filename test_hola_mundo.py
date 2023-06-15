@@ -6,9 +6,4 @@ def test_hm():
 
 test_hm()
 
-x = 4
-y = x
-z = y
-c = y
-ct = y
 y = y
